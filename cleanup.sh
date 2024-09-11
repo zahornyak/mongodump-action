@@ -6,5 +6,5 @@ if [ "$2" = "true" ]; then
   rm $GITHUB_WORKSPACE/dump.tar.gz
 fi
 
-echo $(la -la $GITHUB_WORKSPACE)
+echo $(ls -la $GITHUB_WORKSPACE)
 echo "Cleanup completed"
