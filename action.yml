@@ -9,12 +9,16 @@ inputs:
     required: false
     default: 'false'
     description: 'Compress the output file'
+  additional-args:
+    required: false
+    description: 'Additional arguments to pass to mongodump command'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.connection-string }}
+    - ${{ inputs.additional-args }}
     - ${{ inputs.compress }}
   post-entrypoint: '/action/cleanup.sh'
 
