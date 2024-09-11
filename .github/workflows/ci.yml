@@ -2,8 +2,10 @@ name: Tests
 run-name: ${{ github.actor }} requested tests of action
 
 on:
-  - push
-  - workflow_dispatch
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
 
 jobs:
   tests:
