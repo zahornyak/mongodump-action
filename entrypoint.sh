@@ -2,6 +2,7 @@
 
 cd /action
 mongodump --uri=$1 $2
+echo "full command: mongodump --uri=$1 $2"
 mkdir $GITHUB_WORKSPACE/dump
 mv dump $GITHUB_WORKSPACE/
 
