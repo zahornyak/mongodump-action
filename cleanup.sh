@@ -4,9 +4,13 @@ rm -rf $GITHUB_WORKSPACE/dump
 
 if [ "$2" = "true" ]; then
   rm $GITHUB_WORKSPACE/dump.tar.gz
-  echo $(ls -la $GITHUB_WORKSPACE/dump.tar.gz)
-  echo "Compressed dump removed"
+  ls -la $GITHUB_WORKSPACE/dump.tar.gz
+  if [ $? -ne 0 ]; then
+    echo "Compressed dump removed"
+  fi
 fi
 
-echo $(ls -la $GITHUB_WORKSPACE/dump)
-echo "Cleanup completed"
+ls -la $GITHUB_WORKSPACE/dump
+if [ $? -ne 0 ]; then
+  echo "Dump removed"
+fi
