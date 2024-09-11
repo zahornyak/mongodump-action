@@ -28,6 +28,7 @@ jobs:
         with:
           connection-string: mongodb://root:root@database:27017
           compress: true
+          additional-args: '--tlsInsecure'
       - uses: actions/upload-artifact@v4
         with:
           name: dump-mongo${{ matrix.mongo-version }}
