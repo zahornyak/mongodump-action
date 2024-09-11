@@ -5,7 +5,7 @@ GitHub Action for creating a MongoDB dump using `mongodump`.
 ## Example usage
 
 ```yml
-name: Backup
+name: Dump MongoDB
 
 on:
   schedule:
