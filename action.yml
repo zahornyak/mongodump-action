@@ -2,7 +2,7 @@ name: mongodump of a MongoDB database action
 description: Generate a mongodump of a MongoDB database
 
 inputs:
-  connection_string:
+  connection-string:
     required: true
     description: 'The connection string to the MongoDB database'
   compress:
@@ -14,7 +14,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.connection_string }}
+    - ${{ inputs.connection-string }}
     - ${{ inputs.compress }}
 
 branding:
