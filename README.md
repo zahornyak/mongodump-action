@@ -18,4 +18,5 @@ jobs:
       - uses: zahornyak/mongodump-action@v1
         with:
           connection-string: ${{ secrets.MONGO_URI }}
+          compress: true
 ```
