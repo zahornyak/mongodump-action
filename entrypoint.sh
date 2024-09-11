@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cd /action
-mongodump $1
+mongodump --uri=$1
 mkdir $GITHUB_WORKSPACE/dump
-cp -r dump $GITHUB_WORKSPACE/dump
+mv dump $GITHUB_WORKSPACE/
 
 echo "Dump created and stored in $GITHUB_WORKSPACE/dump"
 
