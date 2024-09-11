@@ -16,6 +16,7 @@ runs:
   args:
     - ${{ inputs.connection-string }}
     - ${{ inputs.compress }}
+  post-entrypoint: 'cleanup.sh'
 
 branding:
   icon: 'database'
