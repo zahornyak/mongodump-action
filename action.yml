@@ -1,0 +1,22 @@
+name: Mongodump Action
+description: Generate a mongodump of a MongoDB database
+
+inputs:
+  connection_string:
+    required: true
+    description: 'The connection string to the MongoDB database'
+  compress:
+    required: false
+    default: 'false'
+    description: 'Compress the output file'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.connection_string }}
+    - ${{ inputs.compress }}
+
+branding:
+  icon: 'database'
+  color: 'green'
