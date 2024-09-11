@@ -1,4 +1,4 @@
-name: mongodump action
+name: mongodump of a MongoDB database action
 description: Generate a mongodump of a MongoDB database
 
 inputs:
