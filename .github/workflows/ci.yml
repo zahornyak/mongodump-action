@@ -23,6 +23,7 @@ jobs:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: root
     steps:
+      - uses: actions/checkout@v4
       - uses: ./
         with:
           connection-string: mongodb://root:root@database:27017
