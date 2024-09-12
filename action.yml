@@ -1,5 +1,5 @@
-name: mongodump of a MongoDB database action
-description: Generate a mongodump of a MongoDB database
+name: mongodump/mongorestore of a MongoDB database action
+description: mongodump/mongorestore of a MongoDB database
 
 inputs:
   connection-string:
@@ -11,12 +11,17 @@ inputs:
     description: 'Compress the output file'
   additional-args:
     required: false
-    description: 'Additional arguments to pass to mongodump command'
+    description: 'Additional arguments to pass to mongodump/mongorestore command'
+  mongo-command:
+    required: false
+    default: 'mongodump'
+    description: 'The mongodump/mongorestore command to run'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.mongo-command }}
     - ${{ inputs.connection-string }}
     - ${{ inputs.additional-args }}
     - ${{ inputs.compress }}
