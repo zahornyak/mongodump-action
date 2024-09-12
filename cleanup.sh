@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm -rf $GITHUB_WORKSPACE/dump
-if [ $? -eq 0 ]; then
-  echo "Dump removed"
-fi
+#rm -rf $GITHUB_WORKSPACE/dump
+#echo "Dump removed"
+ls -la
+
 
 if [ "$2" = "true" ]; then
   rm $GITHUB_WORKSPACE/dump.tar.gz
