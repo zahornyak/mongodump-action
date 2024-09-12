@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd /action
 $1 --uri=$2 $3
 echo "full command: $1 --uri=$2 $3"
 
