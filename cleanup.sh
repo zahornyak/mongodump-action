@@ -1,13 +1,16 @@
 #!/bin/bash
 
-#rm -rf $GITHUB_WORKSPACE/dump
-#echo "Dump removed"
-ls -la
 
+if [ -d $GITHUB_WORKSPACE/dump ]; then
+  rm -rf $GITHUB_WORKSPACE/dump
+  echo "Dump removed"
+else
+  echo "Dump does not exist"
+fi
 
-if [ "$2" = "true" ]; then
+if [ -f $GITHUB_WORKSPACE/dump.tar.gz ]; then
   rm $GITHUB_WORKSPACE/dump.tar.gz
-  if [ $? -eq 0 ]; then
-    echo "Compressed dump removed"
-  fi
+  echo "Compressed dump removed"
+else
+  echo "Compressed dump does not exist"
 fi
