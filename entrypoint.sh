@@ -1,10 +1,9 @@
 #!/bin/bash
 
-$1 --uri=$2 $3
 echo "full command: $1 --uri=$2 $3"
 
-if [ "$1" = "mongodump" ]; then
-  mv dump $GITHUB_WORKSPACE/
+if [ "$1" = "mongodump" ] && $1 --uri=$2 $3
+then
   echo "Dump created and stored in $GITHUB_WORKSPACE/dump"
 else
   echo "Not a mongodump command. Skipping moving dump"
