@@ -10,7 +10,6 @@ else
 fi
 
 if [ "$4" = "true" ] && [ "$1" = "mongodump" ]; then
-  cd $GITHUB_WORKSPACE
   tar -zcvf dump.tar.gz dump
   echo "Dump compressed and stored in $GITHUB_WORKSPACE/dump.tar.gz"
 else
