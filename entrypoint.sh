@@ -3,9 +3,12 @@
 cd /action
 $1 --uri=$2 $3
 echo "full command: $1 --uri=$2 $3"
-mv dump $GITHUB_WORKSPACE/
-if [ $? -eq 0 ]; then
+
+if [ "$1" = "mongodump" ]; then
+  mv dump $GITHUB_WORKSPACE/
   echo "Dump created and stored in $GITHUB_WORKSPACE/dump"
+else
+  echo "Not a mongodump command. Skipping moving dump"
 fi
 
 if [ "$4" = "true" ] && [ "$1" = "mongodump" ]; then
