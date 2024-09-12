@@ -1,5 +1,4 @@
 name: Tests
-run-name: ${{ github.actor }} requested tests of action
 
 on:
   push:
