@@ -5,7 +5,7 @@ echo "full command: $1 --uri=$2 $3"
 if [ "$1" = "mongodump" ] && $1 --uri=$2 $3
 then
   echo "Dump created and stored in $GITHUB_WORKSPACE/dump"
-else
+else $1 --uri=$2 $3
   echo "Not a mongodump command. Skipping moving dump"
 fi
 
