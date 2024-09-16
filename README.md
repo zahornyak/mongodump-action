@@ -1,6 +1,6 @@
 # Mongodump Action
 
-GitHub Action for creating a MongoDB dump using `mongodump`.
+GitHub Action for creating a MongoDB dump using `mongodump` or restoring a MongoDB dump using `mongorestore`.
 
 ## Example usage
 
