@@ -15,7 +15,7 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     steps:
-      - uses: zahornyak/mongodump-action@v1.3.3
+      - uses: zahornyak/mongodump-action@v1.4.0
         with:
           connection-string: ${{ secrets.MONGO_URI }}
           compress: true
